@@ -50,9 +50,6 @@
 				$this->ctrl = 'index';
 				$this->action = 'index';
 			}
-
-
-
 		}
 		
 	}
