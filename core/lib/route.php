@@ -1,5 +1,6 @@
 <?php 
 	namespace core\lib;
+	use core\config;
 	class route
 	{
 		public $ctrl;
@@ -28,7 +29,7 @@
 						$this->action = $request_uri_arr[1];
 						unset($request_uri_arr[1]);//去除掉控制器方法
 					}else{
-						$this->action = 'index';
+						$this->action = conf::get('ACTION','route');
 					}
 					
 					$count = count($request_uri_arr) + 2;
@@ -42,13 +43,13 @@
 					}
 					
 				}else{
-					$this->ctrl = 'index';
-					$this->action = 'index';
+					$this->ctrl = conf::get('CTRL','route');;
+					$this->action = conf::get('ACTION','route');;
 				}
 				
 			}else{
-				$this->ctrl = 'index';
-				$this->action = 'index';
+				$this->ctrl = conf::get('CTRL','route');;
+				$this->action = conf::get('ACTION','route');;
 			}
 		}
 		

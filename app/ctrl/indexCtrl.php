@@ -23,6 +23,14 @@
 			$this->display('view.html');
 		}	
 
+		public function conf()
+		{
+			$tmp1 = \core\lib\conf::get('CTRL','route');
+			$tmp2 = \core\lib\conf::get('ACTION','route');
+			p($tmp1);
+			p($tmp2);	
+		}
+
 
 
 	}
