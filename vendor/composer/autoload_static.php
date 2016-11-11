@@ -6,10 +6,21 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit3c67dfaf02e45344bff9682f72709ea7
 {
+    public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        'c7359326b6707d98bdc176bf9ddeaebf' => __DIR__ . '/..' . '/catfan/medoo/medoo.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
             'Whoops\\' => 7,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Component\\VarDumper\\' => 28,
         ),
     );
 
@@ -18,6 +29,24 @@ class ComposerStaticInit3c67dfaf02e45344bff9682f72709ea7
         array (
             0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
         ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Component\\VarDumper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/var-dumper',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -25,6 +54,7 @@ class ComposerStaticInit3c67dfaf02e45344bff9682f72709ea7
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit3c67dfaf02e45344bff9682f72709ea7::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit3c67dfaf02e45344bff9682f72709ea7::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3c67dfaf02e45344bff9682f72709ea7::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }
